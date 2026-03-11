@@ -1,0 +1,12 @@
+### GET
+GET http://localhost:1010/health
+
+### POST
+POST http://localhost:1010/auth/register
+Content-Type: application/json
+
+{
+    "name": "mouad",
+    "email": "mouad@gamil.com",
+    "password": "mouadcharadi22334"
+}
