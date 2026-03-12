@@ -1,5 +1,6 @@
 import express from 'express';
 import authRoutes from './routes/auth.routes.js'
+import subscriptionRoutes from './routes/subscription.routes.js'
 import { errHandler } from './middlewares/errorHandler.js';
 import helmet from 'helmet';
 import cors from 'cors';
@@ -9,7 +10,6 @@ const app = express();
 app.use(express.json());
 app.use(helmet());
 app.use(cors());
-app.use(errHandler);
 
 
 
@@ -23,6 +23,8 @@ app.use('/health', (req, res) => {
 
 
 app.use('/auth', authRoutes);
+app.use('/subscription', subscriptionRoutes)
+app.use(errHandler);
 
 
 export { app };

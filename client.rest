@@ -1,12 +1,45 @@
 ### GET
 GET http://localhost:1010/health
 
-### POST
+
+###### auth #######
+
+### register
 POST http://localhost:1010/auth/register
 Content-Type: application/json
 
 {
-    "name": "mouad",
+    "name": "Omar",
+    "email": "Omar@gamil.com",
+    "password": "Omar22334"
+}
+
+### login
+POST http://localhost:1010/auth/login
+Content-Type: application/json
+
+{
     "email": "mouad@gamil.com",
     "password": "mouadcharadi22334"
+}
+
+
+###
+POST  http://localhost:1010/auth/login
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjI5ZmNlZmM0MmFmZGQ1MDM0OGY0ZiIsImlhdCI6MTc3MzMxMzk5OCwiZXhwIjoxNzczOTE4Nzk4fQ.jKMbvudvOHTF7qhbSxyZbeooDq-YwVcCRLYW8cyll4s
+
+
+
+###### subscription #######
+
+# Omar => eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjJkMDA4NjRlMTNhZDBjYzMwYWJkYyIsImlhdCI6MTc3MzMyNjM0NCwiZXhwIjoxNzczOTMxMTQ0fQ.t3iRdREaHMasktqgae6ZXk7MrnMlNz-apZ0wLUIDZ0Q
+
+### Create Subscription
+POST http://localhost:1010/subscription
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjI5ZmNlZmM0MmFmZGQ1MDM0OGY0ZiIsImlhdCI6MTc3MzMxMzk5OCwiZXhwIjoxNzczOTE4Nzk4fQ.jKMbvudvOHTF7qhbSxyZbeooDq-YwVcCRLYW8cyll4s
+
+{
+    "name": "Netflix",
+    "price": 20,
+    "billingCycle": "Monthly",
 }
