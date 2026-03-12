@@ -8,7 +8,7 @@ const router = express.Router();
 
 router
    .post('/register', validateRequest(registerSchema), createUser)
-   
+   .post('/login')
 
 
 export default router;
