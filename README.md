@@ -121,7 +121,7 @@ Example request header: Authorization: Bearer TOKEN
 ---
 
 ## Project Structure
-
+```
 subledger-api
 │
 ├── package.json
@@ -168,7 +168,7 @@ subledger-api
         ├── generateToken.js
         └── response.js
         └── seedAdmin.js
-
+```
 
 ---
 
