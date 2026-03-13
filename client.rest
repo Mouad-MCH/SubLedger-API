@@ -9,9 +9,9 @@ POST http://localhost:1010/auth/register
 Content-Type: application/json
 
 {
-    "name": "Omar",
-    "email": "Omar@gamil.com",
-    "password": "Omar22334"
+    "name": "Imad",
+    "email": "Imad@gamil.com",
+    "password": "Imad22334"
 }
 
 ### login
@@ -23,10 +23,10 @@ Content-Type: application/json
     "password": "mouadcharadi22334"
 }
 
-
-###
-POST  http://localhost:1010/auth/login
-Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjI5ZmNlZmM0MmFmZGQ1MDM0OGY0ZiIsImlhdCI6MTc3MzMxMzk5OCwiZXhwIjoxNzczOTE4Nzk4fQ.jKMbvudvOHTF7qhbSxyZbeooDq-YwVcCRLYW8cyll4s
+### user GET Profile
+GET http://localhost:1010/auth/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjJkMDA4NjRlMTNhZDBjYzMwYWJkYyIsImlhdCI6MTc3MzMyNjM0NCwiZXhwIjoxNzczOTMxMTQ0fQ.t3iRdREaHMasktqgae6ZXk7MrnMlNz-apZ0wLUIDZ0Q
 
 
 
@@ -36,10 +36,50 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjI5ZmNlZm
 
 ### Create Subscription
 POST http://localhost:1010/subscription
-Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjI5ZmNlZmM0MmFmZGQ1MDM0OGY0ZiIsImlhdCI6MTc3MzMxMzk5OCwiZXhwIjoxNzczOTE4Nzk4fQ.jKMbvudvOHTF7qhbSxyZbeooDq-YwVcCRLYW8cyll4s
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjJkMDA4NjRlMTNhZDBjYzMwYWJkYyIsImlhdCI6MTc3MzMyNjM0NCwiZXhwIjoxNzczOTMxMTQ0fQ.t3iRdREaHMasktqgae6ZXk7MrnMlNz-apZ0wLUIDZ0Q
 
 {
-    "name": "Netflix",
-    "price": 20,
-    "billingCycle": "Monthly",
+    "name": "gemini",
+    "price": 202,
+    "billingCycle": "Monthly"
 }
+
+### user Get subscription
+GET http://localhost:1010/subscription/69b3e8f0cf5abbecdab71c9b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjNlOGYwY2Y1YWJiZWNkYWI3MWM5YiIsImlhdCI6MTc3MzM5ODI1NiwiZXhwIjoxNzc0MDAzMDU2fQ.T2p9vZ4Ci7It7Yc7ztXcmPfyqEf12ndEPpGSoharEOg
+
+### user Get ALL subscription
+GET http://localhost:1010/subscription
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjNlOGYwY2Y1YWJiZWNkYWI3MWM5YiIsImlhdCI6MTc3MzM5ODI1NiwiZXhwIjoxNzc0MDAzMDU2fQ.T2p9vZ4Ci7It7Yc7ztXcmPfyqEf12ndEPpGSoharEOg
+
+
+### user update subscription
+PUT http://localhost:1010/subscription/69b3e952cf5abbecdab71ca1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjNlOGYwY2Y1YWJiZWNkYWI3MWM5YiIsImlhdCI6MTc3MzM5ODI1NiwiZXhwIjoxNzc0MDAzMDU2fQ.T2p9vZ4Ci7It7Yc7ztXcmPfyqEf12ndEPpGSoharEOg
+
+{
+    "price": 330
+}
+
+### delete subscription
+DELETE http://localhost:1010/subscription/69b3e9aecf5abbecdab71cab
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjNlOGYwY2Y1YWJiZWNkYWI3MWM5YiIsImlhdCI6MTc3MzM5ODI1NiwiZXhwIjoxNzc0MDAzMDU2fQ.T2p9vZ4Ci7It7Yc7ztXcmPfyqEf12ndEPpGSoharEOg
+
+
+
+### admin get users
+GET http://localhost:1010/admin/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjQwMGIyMDMzYTFmZWQwNWFjOTlhNiIsImlhdCI6MTc3MzQwNDMzOCwiZXhwIjoxNzc0MDA5MTM4fQ.rQYjY-EriY973o08psi6OtqLsAiW_vNpSpesBNy05bI
+
+
+### admin get subscriptions
+GET http://localhost:1010/admin/subscriptions
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjQwMGIyMDMzYTFmZWQwNWFjOTlhNiIsImlhdCI6MTc3MzQwNDMzOCwiZXhwIjoxNzc0MDA5MTM4fQ.rQYjY-EriY973o08psi6OtqLsAiW_vNpSpesBNy05bI
+

@@ -1,4 +1,4 @@
-import { createUserDB , loginUserDB} from "../services/auth.service.js"
+import { createUserDB , getProfileDB, loginUserDB} from "../services/auth.service.js"
 
 
 
@@ -39,6 +39,29 @@ export const loginUser = async (req, res) => {
             token: login.token
         })
 
+    }catch(err) {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+}
+
+export const getPorfile = async (req, res) => {
+    const user = req.user
+    try {
+        const userSub = await getProfileDB(user._id);
+
+        res.status(200).json({
+            success: true,
+            message: `Welcome ${user.name}`,
+            data: {
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                subscriptions: userSub
+            }
+        })
     }catch(err) {
         res.status(500).json({
             success: false,

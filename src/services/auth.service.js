@@ -1,4 +1,5 @@
 import User from "../models/User.models.js";
+import Subscription from "../models/Subscription.models.js";
 import bcrypt from "bcrypt";
 import { generateToken } from "../utils/generateToken.js";
 
@@ -30,7 +31,6 @@ export const createUserDB = async (data) => {
     }
 }
 
-
 export const loginUserDB = async (email, password) => {
     try {
 
@@ -52,6 +52,17 @@ export const loginUserDB = async (email, password) => {
 
         return {success: true, message: "user is logged" , token}
 
+    }catch(err) {
+        throw err
+    }
+}
+
+export const getProfileDB = async (userId) => {
+    
+    try {
+        const sub = await Subscription.find({userId})
+
+        return sub;
     }catch(err) {
         throw err
     }
